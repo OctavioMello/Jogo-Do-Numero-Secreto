@@ -45,7 +45,9 @@ Praticar lógica de programação, manipulação do DOM e criação de interativ
 
 ## 📷 Preview
 
-![Preview do jogo](./img/Foto do jogo funcionando.png)
+<p align="center">
+  <img src="./img/Foto do jogo funcionando.png" alt="Preview do jogo" width="400">
+</p>
 
 ---
 
