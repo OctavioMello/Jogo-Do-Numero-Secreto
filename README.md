@@ -65,7 +65,7 @@ Durante o desenvolvimento, foram aplicados conceitos como:
 
 ## 🔗 Acesso
 
-(Adicione aqui o link do GitHub Pages quando publicar)
+https://octaviomello.github.io/Jogo-Do-Numero-Secreto/
 
 ---
 
