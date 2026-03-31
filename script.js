@@ -2,13 +2,13 @@ let tentativas = 1;
 let maximoTentativas = 5;
 let numeroMaximo = 10;
 let numerosChutados = [];
+document.getElementById('btnChutar').removeAttribute('disabled');
 
 function gerarNumeroSecreto(){
-    return parseInt((Math.random() * numeroMaximo) + 1)
+    return parseInt((Math.random() * numeroMaximo) + 1);
 }
 
 let numeroSecreto = gerarNumeroSecreto()
-console.log(numeroSecreto);
 
 function exibirTextoDeBaixo(id, texto){
     let mensagem = document.getElementById(id);
@@ -32,7 +32,16 @@ function reiniciarJogo(){
     limparCampo();
     tentativas = 1;
     document.getElementById('btnReiniciar').setAttribute('disabled', true);
+    document.getElementById('btnChutar').removeAttribute('disabled')
     numerosChutados = [];
+}
+function limiteTentativas(){
+    if (tentativas > maximoTentativas){
+        exibirTextoDeCima('textoCima', `Você atingiu o limite de tentativas.<br>O número secreto era ${numeroSecreto}`);
+        exibirTextoDeBaixo('mensagem', "Tente novamente em 'reiniciar'.");
+        document.getElementById('btnChutar').setAttribute('disabled', true);
+        document.getElementById('btnReiniciar').removeAttribute('disabled');
+    }
 }
 
 function verificarChute(){
@@ -50,6 +59,7 @@ function verificarChute(){
         numerosChutados.push(chute);
         if (chute == numeroSecreto){
             document.getElementById('btnReiniciar').removeAttribute('disabled');
+            document.getElementById('btnChutar').setAttribute('disabled', true);
             exibirTextoDeCima('textoCima', `Parabéns, você adivinhou o número secreto em ${tentativas} ${palavraTentativa}!<br>Os números chutados foram: ${numerosChutados}.`);
             exibirTextoDeBaixo('mensagem', 'Aperte "Reiniciar" para jogar novamente.');
         }
@@ -64,4 +74,5 @@ function verificarChute(){
             }
         }
     }
+    limiteTentativas();
 }
