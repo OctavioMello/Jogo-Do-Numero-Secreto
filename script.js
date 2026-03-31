@@ -66,10 +66,10 @@ function verificarValor(numerosChutados, chute, numeroSecreto){
             tentativas++;
             limparCampo();
             if(chute > numeroSecreto){
-                exibirTextoDeBaixo('mensagem', `Você errou! O número secreto é menor que ${b}`);
+                exibirTextoDeBaixo('mensagem', `Você errou! O número secreto é menor que ${chute}`);
             }
             else{
-               exibirTextoDeBaixo('mensagem', `Você errou! O número secreto é maior que ${b}`);
+               exibirTextoDeBaixo('mensagem', `Você errou! O número secreto é maior que ${chute}`);
             }
         }
 }
